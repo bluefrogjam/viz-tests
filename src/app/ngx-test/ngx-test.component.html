@@ -1,0 +1,33 @@
+<div class="chart" *ngIf="data">
+    <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="results"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel">
+    </ngx-charts-line-chart>
+
+    <!-- <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="results"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [xScaleMin]="xScaleMin"
+        [xScaleMax]="xScaleMax"
+        [yScaleMin]="yScaleMin"
+        [yScaleMax]="yScaleMax">
+    </ngx-charts-line-chart> -->
+</div>
