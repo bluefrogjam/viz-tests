@@ -18,15 +18,15 @@ export class NgxTestComponent implements OnInit {
     results: any[];
 
     // options
-    view = [this.width || 700, this.height || 400];
+    view = [this.width || 1200, this.height || 800];
     showXAxis = true;
     showYAxis = true;
     gradient = false;
     showLegend = true;
     showXAxisLabel = true;
     showYAxisLabel = true;
-    xAxisLabel = 'Original';
-    yAxisLabel = 'Corrected';
+    xAxisLabel = 'Mass';
+    yAxisLabel = 'Intensity';
     colorScheme = {
         domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
     };
@@ -45,7 +45,7 @@ export class NgxTestComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.results = [];
+        // this.results = [];
         // this.results = this.staticData.dataSpectra;
         // console.log(this.results);
         // this.results = [];
@@ -67,17 +67,16 @@ export class NgxTestComponent implements OnInit {
         this.data.forEach((element: any) => {
             this.results.push(this.processResult(element));
         });
-        console.log(this.results);
+        // console.log(this.results);
 
         // this.writeJsonFile();
     }
 
-    fakeGetResults() {
+    getFakeResults() {
         // fails
         // this.fakeData = this.staticData.dataSpectra;
         // this.fakeData.forEach((element: any) => {
         //     this.results.push(element);
-        //     // console.log(element);
         // });
         // console.log(this.results);
 
@@ -86,15 +85,30 @@ export class NgxTestComponent implements OnInit {
     }
 
     ngOnChanges() {
+        console.log('ngOnChanges');
         // console.log(this.results);
-        // // For some reason this line is crucial for getResults() to work
+
+        // For some reason this line is crucial for getResults() to work
         this.results = [];
+
         // console.log(this.results);
 
         if (this.data && this.data.length > 0) {
             this.getResults();
-            // this.fakeGetResults();
+            // this.getFakeResults();
         }
+
+        // Old code
+        // if (this.data && this.data.length > 0) this.results = this.processResult(this.data);
+    }
+
+    logData(){
+        console.log('Results: ', this.results);
+        console.log('Data: ', this.data);
+    }
+
+    clearResults() {
+        this.results = [];
     }
 
     // Turn this.results into a json file
@@ -117,5 +131,32 @@ export class NgxTestComponent implements OnInit {
         const blob = new Blob([spectraStr], {type: 'text/plain;charset=utf-8'});
         saveAs(blob, "json_test.txt");
     }
+
+    // This was the code for using a single bar graph
+    
+    // processResults(spectra: any[]) {
+    //     const mi_pairs = spectra["spectra"].split(' ').map(mi => mi.split(':'))
+    //     mi_pairs.forEach(pair => {
+    //         this.results.push({"name": Number(pair[0]), "value": Number(pair[1])});
+    //     });
+    // }
+
+    // ngOnChanges(changes: SimpleChanges) {
+    //     if (!this.isEmpty(this.data)) {
+    //         this.processResults(this.data);
+    //     }
+    // }
+
+    // isEmpty(dict: any): Boolean {
+    //     for (const key in dict) {
+    //         return false;
+    //     }
+    //     return true;
+    // }
+
+    // logData(){
+    //     console.log('Results: ', this.results);
+    //     console.log('Data: ', this.data);
+    // }
 
 }

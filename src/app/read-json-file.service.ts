@@ -12,6 +12,8 @@ export class ReadJsonFileService {
     ) { }
     
     getJSON(): Observable<any> {
+        // return this.http.get('../assets/042019_LiLysoDrugs_CSHPOS_030_Li_16.msms.json') as Observable<any>;
         return this.http.get('../assets/042019_LiLysoDrugs_CSHPOS_030_Li_16.msms_small.json') as Observable<any>;
+        // return this.http.get('../assets/042019_LiLysoDrugs_CSHPOS_030_Li_16.msms_very_small.json') as Observable<any>;
     }
 }

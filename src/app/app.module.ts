@@ -12,12 +12,14 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { HttpClientModule } from '@angular/common/http';
 
 import { StaticData } from 'src/app/static-data';
+import { SpectraChartComponent } from './spectra-chart/spectra-chart.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		NgxTestComponent,
-		ViewChartComponent
+		ViewChartComponent,
+		SpectraChartComponent
 	],
 	imports: [
         BrowserModule,

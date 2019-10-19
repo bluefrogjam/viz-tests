@@ -1,10 +1,7 @@
 <div class="chart" *ngIf="data">
-    <button (click)="logData()">Log Data</button>
-    <!-- <button (click)="clearResults()">Clear Results</button> -->
 
-    <!-- Vertical Bars -->
-    <!-- Use ngx-charts-bar-vertical-2d for a vertical bar chart -->
-    <!-- ngx-charts-bar-vertical for a single spectra -->
+    <!-- <button (click)="logData()">Log Data</button> -->
+
     <!-- <ngx-charts-bar-vertical
         [view]="view"
         [scheme]="colorScheme"
@@ -19,7 +16,6 @@
         [yAxisLabel]="yAxisLabel">
     </ngx-charts-bar-vertical> -->
 
-    <!-- Line Chart -->
     <ngx-charts-line-chart
         [view]="view"
         [scheme]="colorScheme"
@@ -28,27 +24,10 @@
         [xAxis]="showXAxis"
         [yAxis]="showYAxis"
         [legend]="showLegend"
+        [legendTitle]="legendTitle"
         [showXAxisLabel]="showXAxisLabel"
         [showYAxisLabel]="showYAxisLabel"
         [xAxisLabel]="xAxisLabel"
         [yAxisLabel]="yAxisLabel">
     </ngx-charts-line-chart>
-
-    <!-- <ngx-charts-line-chart
-        [view]="view"
-        [scheme]="colorScheme"
-        [results]="results"
-        [gradient]="gradient"
-        [xAxis]="showXAxis"
-        [yAxis]="showYAxis"
-        [legend]="showLegend"
-        [showXAxisLabel]="showXAxisLabel"
-        [showYAxisLabel]="showYAxisLabel"
-        [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel"
-        [xScaleMin]="xScaleMin"
-        [xScaleMax]="xScaleMax"
-        [yScaleMin]="yScaleMin"
-        [yScaleMax]="yScaleMax">
-    </ngx-charts-line-chart> -->
 </div>

@@ -1,3 +1,10 @@
 <button (click)="getData()">Enter Data</button>
-<app-ngx-test [data]="data"></app-ngx-test>
-<!-- <app-ngx-test [data]="this.data"></app-ngx-test> -->
+
+<div class="all-charts" *ngIf="data.length > 0">
+    <div class="chart-view" style="width:100px;" *ngFor="let chartData of data">
+        <!-- <p>{{ chartData.name }}</p> -->
+        <app-spectra-chart [data]="chartData"></app-spectra-chart>
+    </div>
+</div>
+
+<!-- <app-spectra-chart [data]="data"></app-spectra-chart> -->
