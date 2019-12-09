@@ -1,8 +1,9 @@
 <button (click)="getData()">Enter Data</button>
 
 <div class="all-charts" *ngIf="data.length > 0">
-    <div class="chart-view" style="width:100px;" *ngFor="let chartData of data">
-        <!-- <p>{{ chartData.name }}</p> -->
+    <!-- Made the with of chart-view match that of the width in SpectraChartComponent -->
+    <div class="chart-view" style="width:700px;" *ngFor="let chartData of data">
+        <p>{{ chartData.name }}</p>
         <app-spectra-chart [data]="chartData"></app-spectra-chart>
     </div>
 </div>

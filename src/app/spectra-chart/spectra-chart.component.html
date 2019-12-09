@@ -16,6 +16,31 @@
         [yAxisLabel]="yAxisLabel">
     </ngx-charts-bar-vertical> -->
 
+    <!-- Testing Shit -->
+    <!-- <ngx-charts-chart
+      [view]="[width + legendSpacing, height]"
+      [showLegend]="legend"
+      [legendOptions]="legendOptions"
+      [activeEntries]="activeEntries"
+      [animations]="animations"
+      (legendLabelClick)="onClick($event)"
+      (legendLabelActivate)="onActivate($event)"
+      (legendLabelDeactivate)="onDeactivate($event)"
+    >
+        <svg:g [attr.transform]="transform" class="bar-chart chart">
+            <svg:g
+            ngx-charts-x-axis
+            *ngIf="xAxis"
+            [xScale]="xScale"
+            [dims]="dims"
+            [showLabel]="showXAxisLabel"
+            [labelText]="xAxisLabel"
+            [tickFormatting]="xAxisTickFormatting"
+            (dimensionsChanged)="updateXAxisHeight($event)"
+            ></svg:g>
+        </svg:g>
+    </ngx-charts-chart> -->
+
     <ngx-charts-line-chart
         [view]="view"
         [scheme]="colorScheme"

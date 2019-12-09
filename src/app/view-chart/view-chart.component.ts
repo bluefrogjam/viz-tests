@@ -4,6 +4,8 @@ import { ReadJsonFileService } from '../read-json-file.service';
 import { Observable } from 'rxjs';
 import { Config } from 'protractor';
 
+import { timeout } from 'rxjs/operators';
+
 @Component({
     selector: 'app-view-chart',
     templateUrl: './view-chart.component.html',
@@ -23,9 +25,12 @@ export class ViewChartComponent implements OnInit {
 
     getData() {
         const self = this;
-        this.readJsonFileService.getJSON().subscribe({
+        this.readJsonFileService.getJSON().pipe(timeout(5000)).subscribe({
             next(jsonData) {
                 self.data = jsonData['spectra'];
+            },
+            error() {
+                console.log("LOL ERROR");
             }
         });
     }
